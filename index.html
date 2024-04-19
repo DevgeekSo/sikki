@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizzi Chatbot</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #f3f3f3 0%, #ffffff 100%);
+        }
+
+        .landing-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #a0d4fa56;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .landing-page img {
+            height: auto;
+            max-width: 100%;
+            margin: 20px 0;
+            border-radius: 20px;
+            background-color: rgb(128, 0, 255);
+            box-shadow: #ff0000;
+        }
+
+        .landing-page h1 {
+            font-size: 36px;
+            color: #333;
+            animation: fadeInUp 1s ease;
+        }
+
+        .landing-page h5 {
+            font-size: 10px;
+            color: #4b4b4bb2;
+            margin: 10px 0 20px;
+            font-weight: 500;
+            animation: fadeInUp 1s ease;
+        }
+
+        .landing-page p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .start-button {
+            padding: 15px 30px;
+            background-color: #595fff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            animation: fadeInUp 1s ease;
+        }
+
+        .start-button:hover {
+            background-color: #634ecb;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media queries for responsive design */
+        @media (max-width: 768px) {
+            .landing-page h1 {
+                font-size: 28px;
+            }
+            .landing-page h5 {
+                font-size: 12px;
+                margin-top: 50px;
+            }
+            .landing-page p {
+                font-size: 16px;
+            }
+            .start-button {
+                padding: 12px 24px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Audio element for pop sound -->
+    <audio id="pop-sound" src="/s/ttsMP3.com_VoiceText_2024-4-20_1-9-18.mp3"></audio>
+    <audio src="/s/movement-swipe-whoosh-2-186576.mp3"></audio>
+
+    <!-- Landing page -->
+    <div class="landing-page">
+        <h1>Welcome to Sizzi</h1>
+        <img src="/img/chatbot.gif" alt="">
+        <p>Your personal AI assistant</p>
+        <button class="start-button" onclick="startBotpressChat()">Start Chat</button>
+        <h5>Developed by Sandeep Hinwar</h5>    
+    </div>
+
+    <!-- Embedded Botpress link space -->
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/9cf876de-16be-4a5d-95cb-966b778476ec/webchat/config.js" defer></script>
+
+    <script>
+        function startBotpressChat() {
+            // Play the pop sound
+            document.getElementById('pop-sound').play();
+
+            // Open Botpress chat
+            window.botpressWebChat.sendEvent({ type: "toggle" });
+        }
+    </script>
+</body>
+</html>
