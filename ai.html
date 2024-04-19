@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizzi Chatbot</title>
+    <style>
+        /* Your CSS styles here */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #f3f3f3 0%, #ffffff 100%);
+        }
+
+        .landing-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #a0d4fa56;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .landing-page img{
+            height: 50%;
+            width: 20%;
+            margin: 0 0 0 0px;
+            border-radius: 20px;
+            background-color:rgb(128, 0, 255) ;
+            box-shadow: #ff0000;
+        }
+
+        .landing-page h1 {
+            font-size: 36px;
+            color: #333;
+            animation: fadeInUp 1s ease;
+        }
+        .landing-page h5 {
+            font-size: 10px;
+            color: #3333337d;
+            margin-bottom: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            animation: fadeInUp 1s ease;
+        }
+
+        .landing-page p {
+            font-size: 18px;
+            margin-top: 20%;
+            color: #666;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .start-button {
+            padding: 15px 30px;
+            background-color: #595fff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+            animation: fadeInUp 1s ease;
+        }
+
+        .start-button:hover {
+            background-color: #634ecb;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Landing page -->
+    <div class="landing-page">
+        <h1>Welcome to Sizzi</h1>
+        <img src="/img/chatbot.gif" alt="">
+        <p>Your personal AI assistant</p>
+        <button class="start-button" onclick="startBotpressChat()">Start Chat</button>
+        <h5>Develop by Sandeep Hinwar</h5>    
+    </div>
+
+    <!-- Embedded Botpress link space -->
+    <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/9cf876de-16be-4a5d-95cb-966b778476ec/webchat/config.js" defer></script>
+
+    <script>
+        function startBotpressChat() {
+            window.botpressWebChat.sendEvent({ type: "toggle" });
+        }
+    </script>
+</body>
+</html>
